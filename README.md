@@ -1,7 +1,7 @@
 ## Zip your Wordpress folder
 
 ```sh
-zip -r wordpress.zip /path/to/wordpress/folder
+tar -zcvf wordpress.tar.gz /path/to/wordpress/folder
 ```
 
 ```sh
