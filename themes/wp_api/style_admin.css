@@ -1,0 +1,136 @@
+#ft_gall_mtbx {
+  width: 100%;
+  max-height: 600px;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#ft_gall_mtbx label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+#ft_gall_mtbx label div {
+  height: 120px;
+  min-width: 190px;
+  margin: 5px;
+  background-position: center;
+  background-size: cover;
+  border: 6px solid transparent;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+
+#ft_gall_mtbx label div:hover {
+  -webkit-box-shadow: 1px 1px 5px #ccc;
+          box-shadow: 1px 1px 5px #ccc;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#ft_gall_mtbx input {
+  display: none;
+}
+
+#ft_gall_mtbx input:checked + label div {
+  border-color: #41e27f;
+}
+
+#ft_gall_mtbx textarea {
+  display: none;
+}
+
+#videos_mtbx {
+  width: 100%;
+  max-height: 600px;
+  overflow-y: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#videos_mtbx label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+#videos_mtbx label video {
+  height: 120px;
+  min-width: 190px;
+  margin: 5px;
+  background-position: center;
+  background-size: cover;
+  border: 6px solid transparent;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+
+#videos_mtbx label video:hover {
+  -webkit-box-shadow: 1px 1px 5px #ccc;
+          box-shadow: 1px 1px 5px #ccc;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#videos_mtbx input {
+  display: none;
+}
+
+#videos_mtbx input:checked + label video {
+  border-color: #41e27f;
+}
+
+#videos_mtbx textarea {
+  display: none;
+}
+
+.dataTable img {
+  height: 60px;
+  border-radius: 3px;
+  border: 3px solid transparent;
+}
+
+.dataTable input.imagem_banner {
+  display: none;
+}
+
+.dataTable input:checked + label img {
+  border: 3px solid #25ca25;
+}
+
+span.success {
+  background: #2c912c;
+  color: #fff;
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+span.error {
+  background: #a02727;
+  color: #fff;
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+#post-preview {
+  display: none;
+}
+
+#normal-sortables {
+  min-height: 0px !important;
+}
+/*# sourceMappingURL=style_admin.css.map */

@@ -1,0 +1,44 @@
+@import 'scss/mtbx_ft_gall';
+@import 'scss/mtbx_videos';
+
+.dataTable{
+    img{
+        height: 60px;
+        border-radius: 3px;
+        border: 3px solid transparent;
+    }
+
+    input.imagem_banner{
+        display: none;
+    }
+
+    input:checked + label{
+        img{
+        border: 3px solid #25ca25;
+        }
+    }
+}
+
+span.success{
+    background: #2c912c;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+span.error{
+    background: #a02727;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#post-preview{
+    display: none;
+}
+
+#normal-sortables{
+    min-height: 0px !important;
+}

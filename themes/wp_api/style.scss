@@ -1,0 +1,53 @@
+/*
+Theme Name: wp_api theme
+Theme URI: https://github.com/WordPress/twentynineteen
+Author: Filipe Lopes
+Author URI: https://github.com/filiperochalopes
+Description: This theme was created by me (Filipe Lopes) to a project that we only want to access content by Wordpress API. So it is a simple alert in all possible pages that the user should use this API to access content. [PT_BR] ==> Esse tema foi criado por mim (filipe Lopes) para um projeto na qual queríamos que o conteúdo do CMS WORDPRESS fosse acessível apenas pela sua nova API. Esse tema, portanto, consiste em um simples alerta ao usuário para usar o REST API WORDPRESS.
+Requires at least: WordPress 4.9.6
+Version: 1.0
+License: GNU General Public License v2 or later
+Text Domain: wp_api
+Tags: wordpress-api, api
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+html, body{
+	margin: 0 !important;
+	padding: 0;
+}
+
+body{
+	background: #3b3b3b;
+	color: #70d83c;
+	font-family: 'Roboto Mono', monospace;
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+a{
+	text-decoration:none;
+	color: #d86d3c;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+section{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 95vw;
+	min-width: 300px;
+	max-width: 650px;
+	text-align: center;
+
+	div{
+		font-size: .9em;
+		opacity: .6;
+	}
+}

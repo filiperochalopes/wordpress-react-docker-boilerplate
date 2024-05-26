@@ -5,8 +5,3 @@
 
 /*.tar.gz
 /*.sql
-themes/
-plugins/*
-
-!plugins/example
-!themes/wp_api/
