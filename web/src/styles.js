@@ -1,8 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 export const theme = {
-  white: "#fff",
-  black: "#000",
+  grey: "#7f7f7f",
+  dark: "#4f4f4f",
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -18,12 +18,25 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, #root{
     height: 100%;
-    background: ${(props) => props.theme.white};
+    background: ${(props) => props.theme.dark};
     text-align: center;
   }
 
+  main{
+    max-width: 600px;
+    width: 100vw;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
   h1{
-    color: ${(props) => props.theme.black};
+    color: ${(props) => props.theme.grey};
+  }
+
+  input{
+    background: ${(props) => props.theme.grey};
+    color: white;
   }
 
   .flex {
