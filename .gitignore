@@ -1,10 +1,12 @@
 /data
 /wordpress
 
+.env
+
 /*.tar.gz
 /*.sql
 themes/
-plugins/
+plugins/*
 
 !plugins/example
-!themes/wp_api
+!themes/wp_api/
