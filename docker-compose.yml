@@ -21,6 +21,7 @@ services:
     volumes:
       - ./plugins:/var/www/html/wp/wp-content/plugins
       - ./themes:/var/www/html/wp/wp-content/themes
+      - ./uploads:/var/www/html/wp/wp-content/uploads
     depends_on: 
       - db
   nginx:

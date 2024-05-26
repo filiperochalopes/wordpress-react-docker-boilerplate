@@ -1,3 +1,6 @@
 [submodule "plugins/example"]
 	path = plugins/example
 	url = git@github.com:filiperochalopes/wp_plugin_template.git
+[submodule "plugins/smtp-api"]
+	path = plugins/smtp-api
+	url = git@github.com:filiperochalopes/wp_plugin_template.git
