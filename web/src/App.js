@@ -2,17 +2,28 @@ import { theme, GlobalStyles } from "./styles";
 
 import AppContext from "services/context";
 
+import axios from "axios";
+import Button from "components/Button";
 import Header from "components/Header";
 import Input from "components/Input";
 import { useFormik } from "formik";
+import parse from "html-react-parser";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
-import axios from "axios";
+const axiosClient = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+});
 
 function App() {
-  const [user, setUser] = useState(false),
+  const 
+    [posts, setPosts] = useState([]),
+    [settings, setSettings] = useState([]),
     formik = useFormik({
       initialValues: {
         name: "",
@@ -22,26 +33,28 @@ function App() {
       },
       onSubmit: (values) => {
         console.log(values);
+        axiosClient.post("/smtp/v1/contato", values).then((response) => {
+          console.log(response);
+        }).catch((error) => {
+          console.error(error);
+        });
       },
     });
 
   useEffect(() => {
     // use axios to request
-    const axiosClient = axios.create({
-      baseURL: process.env.REACT_APP_WP_API,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
     axiosClient
       .get("/wp/v2/posts")
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error));
+      .then((response) => setPosts(response.data))
+      .catch((error) => {
+        setPosts([]);
+        console.error(error);
+      });
+    axiosClient.get("/").then((response) => setSettings(response.data));
   }, []);
 
   return (
-    <AppContext.Provider value={{ user, setUser }}>
+    <AppContext.Provider value={{ settings }}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header />
@@ -52,9 +65,16 @@ function App() {
             <a href="/wp/wp-admin" target="_blank" rel="noreferrer">
               o painel administrativo
             </a>
-            . Rota da API: {process.env.REACT_APP_WP_API}
+            . Rota da API: {process.env.REACT_APP_API_URL}
           </p>
           <h1>Exibição de postagens</h1>
+          {posts.map((post) => (
+            <section key={post.id}>
+              {post.title.rendered}
+              <br />
+              {parse(post.content.rendered)}
+            </section>
+          ))}
           <h1>Envio de Email Teste</h1>
           <form>
             <Input name="name" placeholder="Nome" formik={formik} />
@@ -66,6 +86,7 @@ function App() {
             />
             <Input name="subject" placeholder="Assunto" formik={formik} />
             <Input name="message" placeholder="Mensagem" formik={formik} />
+            <Button type="button" onClick={formik.handleSubmit}>Enviar</Button>
           </form>
         </main>
       </ThemeProvider>

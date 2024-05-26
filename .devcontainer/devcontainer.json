@@ -21,7 +21,7 @@
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "externsions": [
+      "extensions": [
         "vscode.vscode-typescript-next",
         "esbenp.prettier-vscode",
         "mohd-akram.vscode-html-format",
@@ -29,10 +29,6 @@
         "codeium.codeium"
       ]
     }
-  },
-
-  "containerEnv": {
-    "REACT_APP_API_URL": "http://192.168.100.22:9082/wp/wp-json/wp/v2"
   },
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.

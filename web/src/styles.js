@@ -30,13 +30,17 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
   }
 
+  p, h1, h2, h3{
+    margin: 0.5rem 0;
+  }
+
   h1{
     color: ${(props) => props.theme.grey};
   }
 
   input{
     background: ${(props) => props.theme.grey};
-    color: white;
+    color: black;
   }
 
   .flex {
